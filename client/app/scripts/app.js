@@ -31,7 +31,7 @@ angular
   })
   .config(function ($routeProvider, config, RestangularProvider) {
 
-    $routeProvider.when = function(path, route){
+    $routeProvider.accessWhen = function(path, route){
       route.resolve || (route.resolve = {
         currentUser: function(currentUser){ return currentUser.fetch() }
       });
@@ -47,67 +47,67 @@ angular
       .when('/logout', {
         templateUrl: 'views/logout.html'
       })
-      .when('/', {
+      .accessWhen('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/logins', {
+      .accessWhen('/logins', {
         templateUrl: 'views/logins.html',
         controller: 'LoginsCtrl'
       })
-      .when('/create/login', {
+      .accessWhen('/create/login', {
         templateUrl: 'views/login-add.html',
         controller: 'LoginAddCtrl'
       })
-      .when('/login/:id', {
+      .accessWhen('/login/:id', {
         templateUrl: 'views/login-view.html',
         controller: 'LoginViewCtrl'
       })
-      .when('/login/:id/edit', {
+      .accessWhen('/login/:id/edit', {
         templateUrl: 'views/login-edit.html',
         controller: 'LoginEditCtrl'
       })
-      .when('/login/:id/delete', {
+      .accessWhen('/login/:id/delete', {
         templateUrl: 'views/login-delete.html',
         controller: 'LoginDeleteCtrl'
       })
-      .when('/movies', {
+      .accessWhen('/movies', {
         templateUrl: 'views/movies.html',
         controller: 'MoviesCtrl'
       })
-      .when('/create/movie', {
+      .accessWhen('/create/movie', {
         templateUrl: 'views/movie-add.html',
         controller: 'MovieAddCtrl'
       })
-      .when('/movie/:id', {
+      .accessWhen('/movie/:id', {
         templateUrl: 'views/movie-view.html',
         controller: 'MovieViewCtrl'
       })
-      .when('/movie/:id/edit', {
+      .accessWhen('/movie/:id/edit', {
         templateUrl: 'views/movie-edit.html',
         controller: 'MovieEditCtrl'
       })
-      .when('/movie/:id/delete', {
+      .accessWhen('/movie/:id/delete', {
         templateUrl: 'views/movie-delete.html',
         controller: 'MovieDeleteCtrl'
       })
-      .when('/receipts', {
+      .accessWhen('/receipts', {
         templateUrl: 'views/receipts.html',
         controller: 'ReceiptsCtrl'
       })
-      .when('/create/receipt', {
+      .accessWhen('/create/receipt', {
         templateUrl: 'views/receipt-add.html',
         controller: 'ReceiptAddCtrl'
       })
-      .when('/receipt/:id', {
+      .accessWhen('/receipt/:id', {
         templateUrl: 'views/receipt-view.html',
         controller: 'ReceiptViewCtrl'
       })
-      .when('/receipt/:id/edit', {
+      .accessWhen('/receipt/:id/edit', {
         templateUrl: 'views/receipt-edit.html',
         controller: 'ReceiptEditCtrl'
       })
-      .when('/receipt/:id/delete', {
+      .accessWhen('/receipt/:id/delete', {
         templateUrl: 'views/receipt-delete.html',
         controller: 'ReceiptDeleteCtrl'
       })
