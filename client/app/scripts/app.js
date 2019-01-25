@@ -24,32 +24,16 @@ angular
       duration: 250
     });
   }])
-  .config(['$authProvider', 'config', function ($authProvider, config) {
-    $authProvider.github({
-      clientId: config.GITHUB_CLIENT_ID,
-      redirectUri: config.GITHUB_REDIRECT_URI,
-      url: config.GITHUB_ACCESS_TOKEN_REQUEST_URL
-    });
-    $authProvider.httpInterceptor = true;
-  }])
   .config(function (momentPickerProvider) {
     momentPickerProvider.options({
       minutesStep: 1
     });
   })
-  .config(function ($routeProvider, $authProvider, config, RestangularProvider) {
-    var requireAuthentication = function ($location, $auth, AuthenticationService) {
-      if ($auth.isAuthenticated()) {
-        return AuthenticationService.login()
-      } else {
-        return $location.path('/login');
-      }
-    };
+  .config(function ($routeProvider, config, RestangularProvider) {
 
     $routeProvider.accessWhen = function(path, route){
       route.resolve || (route.resolve = {
-        currentUser: function(currentUser){ return currentUser.fetch() },
-        requireAuthentication: requireAuthentication
+        currentUser: function(currentUser){ return currentUser.fetch() }
       });
       return $routeProvider.when(path, route);
     };
