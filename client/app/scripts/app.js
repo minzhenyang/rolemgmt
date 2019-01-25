@@ -47,27 +47,27 @@ angular
       .when('/logout', {
         templateUrl: 'views/logout.html'
       })
-      .accessWhen('/', {
+      .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .accessWhen('/logins', {
+      .when('/logins', {
         templateUrl: 'views/logins.html',
         controller: 'LoginsCtrl'
       })
-      .accessWhen('/create/login', {
+      .when('/create/login', {
         templateUrl: 'views/login-add.html',
         controller: 'LoginAddCtrl'
       })
-      .accessWhen('/login/:id', {
+      .when('/login/:id', {
         templateUrl: 'views/login-view.html',
         controller: 'LoginViewCtrl'
       })
-      .accessWhen('/login/:id/edit', {
+      .when('/login/:id/edit', {
         templateUrl: 'views/login-edit.html',
         controller: 'LoginEditCtrl'
       })
-      .accessWhen('/login/:id/delete', {
+      .when('/login/:id/delete', {
         templateUrl: 'views/login-delete.html',
         controller: 'LoginDeleteCtrl'
       })
@@ -91,23 +91,23 @@ angular
         templateUrl: 'views/movie-delete.html',
         controller: 'MovieDeleteCtrl'
       })
-      .accessWhen('/receipts', {
+      .when('/receipts', {
         templateUrl: 'views/receipts.html',
         controller: 'ReceiptsCtrl'
       })
-      .accessWhen('/create/receipt', {
+      .when('/create/receipt', {
         templateUrl: 'views/receipt-add.html',
         controller: 'ReceiptAddCtrl'
       })
-      .accessWhen('/receipt/:id', {
+      .when('/receipt/:id', {
         templateUrl: 'views/receipt-view.html',
         controller: 'ReceiptViewCtrl'
       })
-      .accessWhen('/receipt/:id/edit', {
+      .when('/receipt/:id/edit', {
         templateUrl: 'views/receipt-edit.html',
         controller: 'ReceiptEditCtrl'
       })
-      .accessWhen('/receipt/:id/delete', {
+      .when('/receipt/:id/delete', {
         templateUrl: 'views/receipt-delete.html',
         controller: 'ReceiptDeleteCtrl'
       })
